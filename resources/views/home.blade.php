@@ -83,6 +83,7 @@
                     <thead>
                         <tr>
                             <th>Date</th>
+                            <th>Amount</th>
                             <th>Details</th>
                             <th>Type</th>
                             <th>Actions</th>
@@ -92,6 +93,7 @@
                         @foreach ($data as $key => $value)
                             <tr id="{{$value->id}}">
                                 <td>{{$value->date}}</td>
+                                <td>{{$value->amount}}</td>
                                 <td>{{$value->details}}</td>
                                 @if($value->type == 0)
                                 <td>Expence <i class="mx-1 text-danger fa-solid fa-arrow-down"></i></td>
