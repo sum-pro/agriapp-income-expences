@@ -93,7 +93,11 @@
                             <tr id="{{$value->id}}">
                                 <td>{{$value->date}}</td>
                                 <td>{{$value->details}}</td>
-                                <td>{{$value->type}}</td>
+                                @if($value->type == 0)
+                                <td>Expence <i class="mx-1 text-danger fa-solid fa-arrow-down"></i></td>
+                                @else                                
+                                <td> Income <i class="mx-1 text-success fa-solid fa-arrow-up"></i></td>
+                                @endif
                                 <td class="d-flex justify-content-around">
                             <form action="/del-transaction/{{ $value->id }}" method="post">
                                 @csrf

@@ -73,7 +73,7 @@ class IncomeExpenseController extends Controller
     {
         try {
             $user_id = auth()->user()->id;
-            $data = IncomeExpense::where('user_id', $user_id)->paginate(5);
+            $data = IncomeExpense::where('user_id', $user_id)->orderBy('id', 'DESC')->paginate(5);
             $cards_data = IncomeExpense::where('user_id', $user_id)->orderBy('id', 'DESC')->first();
             return view('home', compact('data', 'cards_data'));
         } catch (Exception $e) {
